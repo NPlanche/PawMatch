@@ -15,18 +15,24 @@
     </nav>
   </header>
   <main>
+
     <section>
         <h2>Dog Breed Matches</h2>
     </section>
-    <sectio id="result-list">
-        <article>
-            <h3>Breed Name</h3>
-            <p>Breed Description</p>
-            <p>Why it matches:</p>
-            <a href="breed-detail.html"> View Details</a>
-        </article>
-    </sectio>
-    <a href="quiz.html">Retake Quiz</a>
+
+    <section id="ans-summary">
+      <h3>Quiz Answers</h3>
+      <p id="ans-display">Your answers will appear here.</p>
+    </section>
+
+    <section id="results-list">
+    </section>
+
+    <br>
+    <button id="retake-quiz-btn">Retake Quiz</button>
+
   </main>
+  <script src="js/api.js"></script>
+  <script src="js/ui.js"></script>
 </body>
 </html>
