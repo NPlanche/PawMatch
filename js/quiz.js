@@ -18,5 +18,5 @@ quizForm.addEventListener("submit", function(event){
     localStorage.setItem("quizAnswers", JSON.stringify(ans));
 
     console.log("Saved Ans: ", ans);
-    window.location.href = "results.html";
+    window.location.href = "/PawMatch/results.html";
 });
