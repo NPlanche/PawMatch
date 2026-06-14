@@ -17,7 +17,6 @@ if (!savedAns) {
 if(ans){
 getBreeds()
 .then(function (breeds) {
-    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
 
     const topBreeds = breeds.map(function(breed){
         return {
@@ -25,11 +24,13 @@ getBreeds()
             score: getMatchScore(breed,ans)
         };
     })
-    .filter(item => item.score > 0)
-    .slice(0,5)
+    .filter(function(item){
+        return item.score > 0;
+    })
     .sort(function(a,b){
         return b.score - a.score;
-    });
+    })
+    .slice(0,5);
 
     if(topBreeds.length ===  0){
         resultsList.innerHTML=`
