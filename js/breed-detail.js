@@ -39,7 +39,7 @@ if (!savedBreed) {
         if(img.length > 0 && img[0].url){
             breedImage.src = img[0].url;
             console.log(breedImage);
-            breedImage.alt = `${breed.name || "Dog breed"} image unavailable`;
+            breedImage.alt = `${breed.name || "Dog breed"} image`;
         }else{
             breedImage.src = "";
             breedImage.alt = `${breed.name || "Dog breed"} image unavailable`;

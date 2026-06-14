@@ -11,21 +11,25 @@ if (!savedAns) {
 } else {
     ans = JSON.parse(savedAns);
     console.log("Quiz Answers:", ans);
-    ansDisplay.textContent = `Home: ${ans.home}, Activity: ${ans.activity}, Size: ${ans.size}`;
+    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
 }
 
 if(ans){
 getBreeds()
 .then(function (breeds) {
+    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
 
     const topBreeds = breeds.map(function(breed){
         return {
             breed: breed,
             score: getMatchScore(breed,ans)
         };
-    }).sort(function(a,b){
+    })
+    .filter(item => item.score > 0)
+    .slice(0,5)
+    .sort(function(a,b){
         return b.score - a.score;
-    }).slice(0,5);
+    });
 
     if(topBreeds.length ===  0){
         resultsList.innerHTML=`
@@ -67,8 +71,6 @@ function getMatchScore(breed, ans){
     const group = breed.breed_group ? breed.breed_group.toLowerCase() : "";
     const temperament = breed.temperament ? breed.temperament.toLowerCase(): "";
 
-    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
-
     //Size
     if(ans.size === "small"){
         if(weight !== null && weight <= 10){
@@ -109,7 +111,7 @@ function getMatchScore(breed, ans){
             score += 1;
         }
     }
-        if(ans.size === "house"){
+        if(ans.home === "house"){
         if(weight !== null && weight > 20){
             score += 2;
         }else{
