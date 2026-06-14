@@ -46,7 +46,8 @@ getBreeds()
             <h3>${breed.name}</h3>
             <p>${breed.description || "No description available."}</p>
             <p><strong>Breed Group:</strong> ${breed.breed_group || "Unknown"}</p>
-            <a href="/PawMatch/breed-detail.html">View Details</a>
+            </br>
+            <a id="reults-quiz-btn" href="/PawMatch/breed-detail.html">View Details</a>
         `;
 
         const details = card.querySelector("a");
