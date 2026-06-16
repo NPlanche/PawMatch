@@ -10,6 +10,8 @@ const breedOrigin = document.getElementById("breed-origin");
 const breedWeight = document.getElementById("breed-weigth");
 const breedHeight = document.getElementById("breed-height");
 const breedTemperament = document.getElementById("breed-temperament");
+const breedHistory = document.getElementById("breed-history");
+
 
 if (!savedBreed) {
     breedName.textContent = "No breed selected.";
@@ -19,6 +21,8 @@ if (!savedBreed) {
     breedWeight.textContent = "";
     breedHeight.textContent = "";
     breedTemperament.textContent = "";
+    breedHistory.textContent = "";
+    breedOrigin.textContent = "";
     breedImage.src = "";
     breedImage.alt = "No breed selected";
 } else {
@@ -28,6 +32,7 @@ if (!savedBreed) {
     const id = breed.id;
     breedName.textContent = breed.name || "Unknown breed";
     breedDescription.textContent = breed.description || "No description available.";
+    breedHistory.textContent = breed.history || "No history available.";
     breedLifeSpan.textContent = breed.life_span || "Unknown";
     breedOrigin.textContent = breed.origin || "Unknown";
     breedWeight.textContent = breed.weight ? breed.weight.metric + " kg" : "Unknown";

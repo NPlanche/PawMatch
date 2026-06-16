@@ -194,15 +194,26 @@ article p {
 
 #breed-profile {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
+#breed-name{
+  grid-column: 1/-1;
+}
+
 #breed-image {
+  grid-column: 1;
   width: 100%;
-  max-height: 420px;
+  max-height: 300px;
   object-fit: cover;
-  border-radius: 18px;
+  border-radius: 10px;
   border: 1px solid #ddd2c3;
+}
+
+#breed-des{
+  grid-column: 2;
+  margin: 0;
 }
 
 #breed-facts ul {
@@ -216,7 +227,7 @@ article p {
 #breed-facts li {
   background: #f7f1de;
   border: 1px solid #ddd2c3;
-  border-radius: 12px;
+  border-radius: 10px;
   padding: 0.85rem 1rem;
 }
 
