@@ -159,6 +159,13 @@ form button,
   align-self: flex-start;
   background-color: #B0BA99;
 }
+#retake-quiz-btn:hover{
+  background-color: #7d4f2c;
+}
+
+#quiz-btn:hover{
+  background-color: #7d4f2c;
+}
 
 #results-list {
   display: grid;
@@ -236,10 +243,4 @@ button:focus-visible,
 input:focus-visible {
   outline: 3px solid #B0BA99;
   outline-offset: 3px;
-}
-
-@media (max-width: 700px) {
-  .breed-details-top {
-    grid-template-columns: 1fr;
-  }
 }
