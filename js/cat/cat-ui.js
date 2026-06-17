@@ -1,21 +1,21 @@
-import {getBreeds} from "./api.js";
+import {getCatBreeds} from "../api.js";
 
-const savedAns = localStorage.getItem("quizAnswers");
-const ansDisplay = document.getElementById("ans-display");
-const resultsList = document.getElementById("results-list");
-const retake = document.getElementById("retake-quiz-btn");
+const savedAns = localStorage.getItem("quizCatAnswers");
+const ansDisplay = document.getElementById("ans-cat-display");
+const resultsList = document.getElementById("results-cat-list");
+const retake = document.getElementById("retake-cat-quiz-btn");
 
 let ans = null;
 if (!savedAns) {
     ansDisplay.textContent = "No quiz answers found. Please take the quiz first.";
 } else {
     ans = JSON.parse(savedAns);
-    console.log("Quiz Answers:", ans);
-    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
+    console.log("Cat Quiz Answers:", ans);
+    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity cat in a ${ans.home}.`;
 }
 
 if(ans){
-getBreeds()
+getCatBreeds()
 .then(function (breeds) {
 
     const topBreeds = breeds.map(function(breed){
@@ -45,17 +45,16 @@ getBreeds()
         card.innerHTML = `
             <h3>${breed.name}</h3>
             <p>${breed.description || "No description available."}</p>
-            <p><strong>Breed Group:</strong> ${breed.breed_group || "Unknown"}</p>
             </br>
-            <a id="reults-quiz-btn" href="/PawMatch/breed-detail.html">View Details</a>
+            <a id="results-cat-quiz-btn" href="/PawMatch/cat/cat-breed-detail.html">View Details</a>
         `;
 
         const details = card.querySelector("a");
 
         details.addEventListener("click", function (event) {
             event.preventDefault();
-            localStorage.setItem("selectedBreed", JSON.stringify(breed));
-            window.location.href = "/PawMatch/breed-detail.html";
+            localStorage.setItem("selectedCatBreed", JSON.stringify(breed));
+            window.location.href = "/PawMatch/cat/cat-breed-detail.html";
         });
 
         resultsList.appendChild(card);
@@ -169,8 +168,8 @@ function getMatchScore(breed, ans){
 
 if(retake){
     retake.addEventListener("click", function(){
-        localStorage.removeItem("quizAnswers");
-        localStorage.removeItem("selectedBreed");
-        window.location.href = "/PawMatch/quiz.html";
+        localStorage.removeItem("quizCatAnswers");
+        localStorage.removeItem("selectedCatBreed");
+        window.location.href = "/PawMatch/cat/cat-quiz.html";
     })
 }

@@ -1,4 +1,4 @@
-import {getImage} from "./api.js"
+import {getImage} from "../api.js"
 
 const savedBreed = localStorage.getItem("selectedBreed");
 

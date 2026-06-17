@@ -1,4 +1,5 @@
 const API_KEY = import.meta.env.VITE_DOG_API_KEY;
+const CAT_API_KEY = import.meta.env.VITE_CAT_API_KEY;
 
 export function getBreeds() {
  return fetch("https://api.thedogapi.com/v1/breeds",{
@@ -22,6 +23,22 @@ export function getImage(id){
             "x-api-key": API_KEY
         }
     }).then(function (response) {
+    if (!response.ok) {
+        throw new Error(`HTTP error: ${response.status}`);
+    }
+
+    return response.json();
+});
+}
+
+
+export function getCatBreeds() {
+ return fetch("https://api.thecatapi.com/v1/breeds",{
+    headers:{
+        "x-api-key": CAT_API_KEY
+    }
+
+}).then(function (response) {
     if (!response.ok) {
         throw new Error(`HTTP error: ${response.status}`);
     }

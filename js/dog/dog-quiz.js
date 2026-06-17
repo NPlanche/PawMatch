@@ -11,12 +11,12 @@ quizForm.addEventListener("submit", function(event){
     };
 
     if(!ans.home || !ans.activity || !ans.size){
-        alert("Please answer all questions before contunuing");
+        alert("Please answer all questions before continuing.");
         return;
     }
 
     localStorage.setItem("quizAnswers", JSON.stringify(ans));
 
     console.log("Saved Ans: ", ans);
-    window.location.href = "results.html";
+    window.location.href = "../dog/dog-results.html";
 });

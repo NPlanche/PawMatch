@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>PawMatch | Quiz </title>
+        <link rel="stylesheet" href="../styles.css">
+    </head>
+    <body>
+        <header>
+            <div class="header-inner">
+                <nav>
+                    <a href="../index.html" class="site-logo">PawMatch</a>
+                    <a href="../index.html">Home</a>
+                    <a href="../quiz.html">Quiz</a>
+                    <a href="../search.html">Search</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section>
+                <h2>Cat Match Quiz</h2>
+                <p>Answer these questions to find what cat breed fits your lifestyle.</p>
+                <form id="quiz-cat-form">
+                    <fieldset>
+                        <legend>
+                            1. What kind of home do you live in?
+                        </legend>
+                        <label>
+                            <input type="radio" name="home" value="apartment">
+                            Apartment
+                        </label>
+                        <label>
+                            <input type="radio" name="home" value="house">
+                            House
+                        </label>
+                        <label>
+                            <input type="radio" name="home" value="large-property">
+                            Large Property
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>2. How active are you?</legend>
+
+                        <label>
+                            <input type="radio" name="activity" value="low">
+                            Low
+                        </label>
+
+                        <label>
+                            <input type="radio" name="activity" value="medium">
+                            Medium
+                        </label>
+
+                        <label>
+                            <input type="radio" name="activity" value="high">
+                            High
+                        </label>
+                    </fieldset>
+
+                    <fieldset>
+                    <legend>3. What cat size do you prefer?</legend>
+
+                    <label>
+                        <input type="radio" name="size" value="small">
+                        Small
+                    </label>
+
+                    <label>
+                        <input type="radio" name="size" value="medium">
+                        Medium
+                    </label>
+
+                    <label>
+                        <input type="radio" name="size" value="large">
+                        Large
+                    </label>
+                    </fieldset>
+
+                    <button type="submit">See Results</button>
+                </form>
+            </section>
+        </main>
+        <script type="module" src="../js/cat/cat-quiz.js"></script>
+    </body>
+</html>
+
