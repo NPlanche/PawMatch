@@ -185,6 +185,7 @@ form button,
   background-color: #7d4f2c;
 }
 
+#results-cat-list,
 #results-list {
   display: grid;
   gap: 1rem;
@@ -193,6 +194,8 @@ form button,
   border: none;
   padding: 0;
 }
+
+
 
 article {
   background: linear-gradient(180deg, #fffaf2 0%, #f8f2e6 100%);
