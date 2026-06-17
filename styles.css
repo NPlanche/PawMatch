@@ -173,6 +173,7 @@ input[type="radio"] {
 }
 
 form button,
+#retake-cat-quiz-btn,
 #retake-quiz-btn {
   align-self: flex-start;
   background-color: #B0BA99;
