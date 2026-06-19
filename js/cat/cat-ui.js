@@ -11,7 +11,7 @@ if (!savedAns) {
 } else {
     ans = JSON.parse(savedAns);
     console.log("Cat Quiz Answers:", ans);
-    ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity cat in a ${ans.home}.`;
+    ansDisplay.textContent = `Best matches for a cat with ${ans.activity} level of activity , ${ans.affection} level of affection, ${ans.grooming} grooming needs, ${ans.vocal} vocalization, ${ans.otherPets === "yes" ? "good with other pets" : "not necessarily good with other pets"}, and ${ans.kids === "yes" ? "good with children" : "not necessarily good with children"}.`;
 }
 
 if(ans){
@@ -68,99 +68,119 @@ getCatBreeds()
 
 function getMatchScore(breed, ans){
     let score = 0;
-    const weight = breed.weight && breed.weight.metric ? parseFloat(breed.weight.metric): null;
-    const group = breed.breed_group ? breed.breed_group.toLowerCase() : "";
-    const temperament = breed.temperament ? breed.temperament.toLowerCase(): "";
-
-    //Size
-    if(ans.size === "small"){
-        if(weight !== null && weight <= 10){
-            score += 3;
-        }else if(weight !== null && weight <=20){
-            score += 1;
-        }else{
-            score -= 2;
-        }
-    }
-
-    if(ans.size === "medium"){
-        if(weight !== null && weight > 10 && weight <= 25){
-            score += 3;
-        }else if(weight !==null && weight <= 35){
-            score += 1;
-        }else{
-            score -= 2;
-        }
-    }
-
-    
-    if(ans.size === "large"){
-        if(weight !== null && weight > 25){
-            score += 3;
-        }else if(weight !==null && weight > 20){
-            score += 1;
-        }else{
-            score -= 2;
-        }
-    }
 
     //Home
-    if(ans.home === "apartment"){
-            if(weight !== null && weight <= 10){
-            score += 3;
-        }else if(weight !== null && weight <=20){
-            score += 1;
+     if (ans.home === "apartment") {
+        if (breed.adaptability >= 4) {score += 3;
+        }
+        if (breed.indoor === 1) {score += 2;
         }
     }
-        if(ans.home === "house"){
-        if(weight !== null && weight > 20){
-            score += 2;
-        }else{
-            score += 1;
+    if (ans.home === "house") {
+        if (breed.adaptability >= 3) {score += 2;
         }
     }
 
-    //Activity
-    if(ans.activity === "low"){
-        if (group === "toy" || group === "non-sporting") {
-            score += 3;
+     // activity
+    if (ans.activity === "low") {
+        if (breed.energy_level <= 2) {score += 4;
         }
+        else if (breed.energy_level === 3) {score += 2;
+        }
+    }
 
-        if (group === "working" || group === "herding" || group === "sporting") {
-            score -= 2;
+    if (ans.activity === "medium") {
+        if (breed.energy_level === 3) {score += 4;
         }
+        else if (breed.energy_level === 2 || breed.energy_level === 4) {score += 2;
+        }
+    }
 
-        if(temperament.includes("calm") || temperament.includes("gentle") ||temperament.includes("quiet") || temperament.includes("easygoing")){
-            score += 2;
+    if (ans.activity === "high") {
+        if (breed.energy_level >= 4) {score += 4;
         }
-         if (temperament.includes("active") || temperament.includes("energetic") || temperament.includes("intense")) 
+    }
+
+    // affection
+    if (ans.affection === "independent") {
+        if (breed.affection_level <= 2) {score += 4;
+        }
+        else if (breed.social_needs <= 2) {score += 2;
+        }
+    }
+
+    if (ans.affection === "balanced") {
+        if (breed.affection_level === 3) {score += 4;
+        }
+        else if (breed.affection_level === 2 || breed.affection_level === 4) {score += 2;
+        }
+    }
+
+    if (ans.affection === "very-affectionate") {
+        if (breed.affection_level >= 4) {score += 4;
+        }
+        if (breed.social_needs >= 4) {score += 1;
+        }
+        if (breed.lap === 1) {score += 1;
+        }
+    }
+
+    // grooming
+    if (ans.grooming === "low") {
+        if (breed.grooming <= 2) {score += 4;
+        }
+        if (breed.shedding_level <= 2) {score += 1;
+        }
+    }
+
+    if (ans.grooming === "medium") {
+        if (breed.grooming === 3) {score += 4;
+        } else if (breed.grooming === 2)
         {
-            score -= 1;
-        }
-    }
-
-    if(ans.activity === "medium"){
-        if (group === "hound" || group === "non-sporting" || group === "terrier") {
-            score += 2;
-        }
-
-        if(temperament.includes("friendly") || temperament.includes("playful") || temperament.includes("smart") || temperament.includes("social") ||  temperament.includes("adaptable")){
             score += 2;
         }
     }
 
+    if (ans.grooming === "high") {
+        if (breed.grooming >= 4) {score += 4;
+        }
+    }
 
-    if(ans.activity === "high"){
-        if (group === "hound" || group === "non-sporting" || group === "terrier") {
+    // vocal
+    if (ans.vocal === "quiet") {
+        if (breed.vocalisation <= 2) {score += 4;
+        }
+    }
+
+    if (ans.vocal === "medium") {
+        if (breed.vocalisation === 3){score += 4;
+        } else if (breed.vocalisation === 2 || breed.vocalisation === 4) {
             score += 2;
         }
-
-    if(temperament.includes("active") || temperament.includes("energetic") || temperament.includes("alert")|| temperament.includes("intense") || temperament.includes("agile") || temperament.includes("smart") ||
-        temperament.includes("athletic") || temperament.includes("protective")){
-        score += 2;
-    }else if(temperament.includes("calm")||temperament.includes("quiet") ){
-        score -= 1;
     }
+
+    if (ans.vocal === "chatty") {
+        if (breed.vocalisation >= 4) {
+            score += 4;
+        }
+    }
+
+    // other pets
+    if (ans.otherPets === "yes") {
+        if (breed.dog_friendly >= 4) {
+            score += 4;
+        } else if (breed.dog_friendly === 3) {
+            score += 2;
+        }
+    }
+
+    // kids
+    if (ans.kids === "yes") {
+        if (breed.child_friendly >= 4) {
+            score += 4;
+        } else if (breed.child_friendly === 3) {
+            score += 2;
+        }
     }
 
     return score;

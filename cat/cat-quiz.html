@@ -19,6 +19,7 @@
                 <h2>Cat Match Quiz</h2>
                 <p>Answer these questions to find what cat breed fits your lifestyle.</p>
                 <form id="quiz-cat-form">
+                    <!-- Home -->
                     <fieldset>
                         <legend>
                             1. What kind of home do you live in?
@@ -31,48 +32,47 @@
                             <input type="radio" name="home" value="house">
                             House
                         </label>
-                        <label>
-                            <input type="radio" name="home" value="large-property">
-                            Large Property
-                        </label>
+                    </fieldset>
+                    <!-- activity -->
+                    <fieldset>
+                        <legend>2. How active do you want your cat to be?</legend>
+                        <label><input type="radio" name="activity" value="low"> Low</label>
+                        <label><input type="radio" name="activity" value="medium"> Medium</label>
+                        <label><input type="radio" name="activity" value="high"> High</label>
                     </fieldset>
 
+                    <!-- affection -->
                     <fieldset>
-                        <legend>2. How active are you?</legend>
-
-                        <label>
-                            <input type="radio" name="activity" value="low">
-                            Low
-                        </label>
-
-                        <label>
-                            <input type="radio" name="activity" value="medium">
-                            Medium
-                        </label>
-
-                        <label>
-                            <input type="radio" name="activity" value="high">
-                            High
-                        </label>
+                        <legend>3. How affectionate do you want your cat to be?</legend>
+                        <label><input type="radio" name="affection" value="independent"> More independent</label>
+                        <label><input type="radio" name="affection" value="balanced"> Balanced</label>
+                        <label><input type="radio" name="affection" value="very-affectionate"> Very affectionate</label>
                     </fieldset>
-
+                    <!-- grooming -->
                     <fieldset>
-                    <legend>3. What cat size do you prefer?</legend>
-
-                    <label>
-                        <input type="radio" name="size" value="small">
-                        Small
-                    </label>
-
-                    <label>
-                        <input type="radio" name="size" value="medium">
-                        Medium
-                    </label>
-
-                    <label>
-                        <input type="radio" name="size" value="large">
-                        Large
-                    </label>
+                        <legend>4. How much grooming are you okay with?</legend>
+                        <label><input type="radio" name="grooming" value="low"> Low</label>
+                        <label><input type="radio" name="grooming" value="medium"> Medium</label>
+                        <label><input type="radio" name="grooming" value="high"> High</label>
+                    </fieldset>
+                    <!-- vocal -->
+                    <fieldset>
+                        <legend>5. How talkative do you want your cat to be?</legend>
+                        <label><input type="radio" name="vocal" value="quiet"> Quiet</label>
+                        <label><input type="radio" name="vocal" value="medium"> Medium</label>
+                        <label><input type="radio" name="vocal" value="chatty"> Chatty</label>
+                    </fieldset>
+                    <!-- other pets -->
+                    <fieldset>
+                        <legend>6. Do you need your cat to do well with dogs?</legend>
+                        <label><input type="radio" name="otherPets" value="yes"> Yes</label>
+                        <label><input type="radio" name="otherPets" value="no"> No</label>
+                    </fieldset>
+                    <!-- kids -->
+                    <fieldset>
+                        <legend>7. Do you need your cat to be good with children?</legend>
+                        <label><input type="radio" name="kids" value="yes"> Yes</label>
+                        <label><input type="radio" name="kids" value="no"> No</label>
                     </fieldset>
 
                     <button type="submit">See Results</button>

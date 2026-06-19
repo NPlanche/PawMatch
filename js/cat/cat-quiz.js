@@ -7,10 +7,14 @@ quizCatForm.addEventListener("submit", function(event){
     const ans = {
         home: data.get("home"),
         activity: data.get("activity"),
-        size: data.get("size")
+        affection: data.get("affection"),
+        grooming: data.get("grooming"),
+        vocal: data.get("vocal"),
+        otherPets: data.get("otherPets"),
+        kids: data.get("kids")
     };
 
-    if(!ans.home || !ans.activity || !ans.size){
+    if(!ans.home || !ans.activity || !ans.affection || !ans.grooming || !ans.vocal || !ans.otherPets || !ans.kids){
         alert("Please answer all questions before continuing.");
         return;
     }
