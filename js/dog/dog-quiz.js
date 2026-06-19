@@ -7,10 +7,11 @@ quizForm.addEventListener("submit", function(event){
     const ans = {
         home: data.get("home"),
         activity: data.get("activity"),
-        size: data.get("size")
+        size: data.get("size"),
+        temperament: data.get("temperament")
     };
 
-    if(!ans.home || !ans.activity || !ans.size){
+    if(!ans.home || !ans.activity || !ans.size || !ans.temperament){
         alert("Please answer all questions before continuing.");
         return;
     }

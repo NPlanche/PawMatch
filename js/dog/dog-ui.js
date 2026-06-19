@@ -149,8 +149,6 @@ function getMatchScore(breed, ans){
             score += 2;
         }
     }
-
-
     if(ans.activity === "high"){
         if (group === "hound" || group === "non-sporting" || group === "terrier") {
             score += 2;
@@ -162,6 +160,38 @@ function getMatchScore(breed, ans){
     }else if(temperament.includes("calm")||temperament.includes("quiet") ){
         score -= 1;
     }
+
+     
+
+    }
+
+    // personality
+    if (ans.personality === "calm") {
+        if (temperament.includes("calm") || temperament.includes("gentle") ) {
+            score += 3;
+        }
+    }
+
+    if (ans.personality === "playful") {
+        if (temperament.includes("playful")) score += 3;
+    }
+
+    if (ans.personality === "protective") {
+        if (temperament.includes("protective") || temperament.includes("alert") || temperament.includes("loyal")) {
+            score += 3;
+        }
+    }
+
+    if (ans.personality === "friendly") {
+        if (temperament.includes("friendly") || temperament.includes("outgoing") || temperament.includes("eager to please")) {
+            score += 3;
+        }
+    }
+
+    if (ans.personality === "independent") {
+        if (temperament.includes("independent") || temperament.includes("work-focused") || temperament.includes("confident")) {
+            score += 3;
+        }
     }
 
     return score;
