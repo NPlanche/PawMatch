@@ -31,7 +31,7 @@ if (!savedBreed) {
     breedOrigin.textContent = breed.origin || "Unknown";
     breedWeight.textContent = breed.weight ? breed.weight.metric + " kg" : "Unknown";
     breedTemperament.textContent = breed.temperament || "Not listed";
-    breedImage.src = breed.image ? breed.image.url : "";
+    breedImage.src = breed.image && breed.image.url ? breed.image.url : "";
     breedImage.alt = `${breed.name || "Cat breed"} image`;
 }
 
