@@ -31,7 +31,9 @@ if (!savedBreed) {
     breedOrigin.textContent = breed.origin || "Unknown";
     breedWeight.textContent = breed.weight ? breed.weight.metric + " kg" : "Unknown";
     breedTemperament.textContent = breed.temperament || "Not listed";
-    breedImage.src = breed.image && breed.image.url ? breed.image.url : "";
+    breedImage.src = breed.image?.url? breed.image.url : breed.reference_image_id
+    ? `https://cdn2.thecatapi.com/images/${breed.reference_image_id}.jpg`
+    : "";
     breedImage.alt = `${breed.name || "Cat breed"} image`;
 }
 
