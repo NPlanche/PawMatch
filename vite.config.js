@@ -7,8 +7,6 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "index.html"),
-        quiz: resolve(__dirname, "quiz.html"),
-        search: resolve(__dirname, "search.html"),
         dogQuiz: resolve(__dirname, "dog/dog-quiz.html"),
         dogResults: resolve(__dirname, "dog/dog-results.html"),
         dogBreedDetail: resolve(__dirname, "dog/dog-breed-detail.html"),
