@@ -1,5 +1,4 @@
 const quizForm = document.getElementById("quiz-form");
-console.log(quizForm);
 
 quizForm.addEventListener("submit", function(event){
     event.preventDefault();
@@ -18,6 +17,5 @@ quizForm.addEventListener("submit", function(event){
 
     localStorage.setItem("quizAnswers", JSON.stringify(ans));
 
-    console.log("Saved Ans: ", ans);
     window.location.href = "../dog/dog-results.html";
 });

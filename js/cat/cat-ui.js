@@ -10,7 +10,6 @@ if (!savedAns) {
     ansDisplay.textContent = "No quiz answers found. Please take the quiz first.";
 } else {
     ans = JSON.parse(savedAns);
-    console.log("Cat Quiz Answers:", ans);
     ansDisplay.textContent = `Best matches for a cat with ${ans.activity} level of activity , ${ans.affection} level of affection, ${ans.grooming} grooming needs, ${ans.vocal} vocalization, ${ans.otherPets === "yes" ? "good with other pets" : "not necessarily good with other pets"}, and ${ans.kids === "yes" ? "good with children" : "not necessarily good with children"}.`;
 }
 
@@ -61,7 +60,6 @@ getCatBreeds()
     });
 })
 .catch(function (error) {
-    console.log("Failed to load breeds in ui.js:", error);
     resultsList.textContent = "Sorry, breed results could not be loaded right now.";
 });
 }

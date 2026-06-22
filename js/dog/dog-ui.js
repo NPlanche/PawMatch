@@ -10,7 +10,6 @@ if (!savedAns) {
     ansDisplay.textContent = "No quiz answers found. Please take the quiz first.";
 } else {
     ans = JSON.parse(savedAns);
-    console.log("Quiz Answers:", ans);
     ansDisplay.textContent = `Best matches for a ${ans.size}, ${ans.activity} activity dog in a ${ans.home}.`;
 }
 
@@ -62,7 +61,6 @@ getBreeds()
     });
 })
 .catch(function (error) {
-    console.log("Failed to load breeds in ui.js:", error);
     resultsList.textContent = "Sorry, breed results could not be loaded right now.";
 });
 }

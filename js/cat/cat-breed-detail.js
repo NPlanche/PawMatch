@@ -22,7 +22,6 @@ if (!savedBreed) {
     breedImage.alt = "No breed selected";
 } else {
     const breed = JSON.parse(savedBreed);
-        console.log(breed);
 
     const id = breed.id;
     breedName.textContent = breed.name || "Unknown breed";

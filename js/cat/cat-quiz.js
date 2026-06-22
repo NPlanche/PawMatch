@@ -1,5 +1,4 @@
 const quizCatForm = document.getElementById("quiz-cat-form");
-console.log(quizCatForm);
 
 quizCatForm.addEventListener("submit", function(event){
     event.preventDefault();
@@ -21,6 +20,5 @@ quizCatForm.addEventListener("submit", function(event){
 
     localStorage.setItem("quizCatAnswers", JSON.stringify(ans));
 
-    console.log("Saved Ans: ", ans);
     window.location.href = "cat-results.html";
 });
