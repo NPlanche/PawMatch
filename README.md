@@ -2,15 +2,15 @@
 
 PawMatch is a pet breed matching app I built to help people find **dog and cat breeds** that fit their lifestyle.
 
-The idea behind the project is simple: instead of scrolling through random breeds, users can take a quiz and get matches based on the kind of pet they’re actually looking for. The app uses real breed data from **TheDogAPI** and **TheCatAPI** to generate results, show breed details, and make the experience feel more useful and personalized.
+The idea behind the project is simple: instead of scrolling through random breeds, users can take a quiz and get matches based on the kind of pet they’re actually looking for. The app uses breed data from **TheDogAPI** and **TheCatAPI** to generate results, show breed details, and make the experience feel more useful and personalized.
 
 ---
 
 ## Why I built this
 
-A lot of people know they want a pet, but they do not always know which breed would be the best fit for their home, energy level, or preferences.
+A lot of people want a pet, but they do not always know which breed would be the best fit for their home, energy level, or preferences.
 
-I wanted to make something that felt fun to use, but also helpful. PawMatch gives users a more interactive way to explore breeds by answering a few questions and getting matched with cats or dogs that may suit them better.
+I wanted to make something that felt fun to use, but also helpful. PawMatch is an interactive way to explore breeds by answering a few questions and getting matched with cats or dogs that may suit them better.
 
 ---
 
@@ -20,7 +20,6 @@ I wanted to make something that felt fun to use, but also helpful. PawMatch give
 - Take a **cat quiz** with more detailed trait-based matching
 - View match results for both dogs and cats
 - Explore individual breed detail pages
-- Browse breeds through the search page
 - Uses real breed data and images from external APIs
 
 ---
@@ -68,8 +67,6 @@ The cat quiz can be more detailed because TheCatAPI provides more structured tra
 ```text
 PawMatch/
 ├── index.html
-├── quiz.html
-├── search.html
 ├── styles.css
 ├── vite.config.js
 ├── js/
@@ -142,9 +139,8 @@ npm run build
 There are still a lot of things I’d like to keep improving in PawMatch, including:
 
 - making the quiz scoring smarter
-- showing users *why* a breed was matched to them
+- showing users why a breed was matched to them
 - adding match percentages
-- improving the search experience
 - adding better loading and error states
 - polishing the UI more
 
@@ -152,10 +148,5 @@ There are still a lot of things I’d like to keep improving in PawMatch, includ
 
 ## Notes
 
-One thing I learned while building this project is that the dog and cat APIs do not return the same kind of breed data. Because of that, the dog quiz and cat quiz should not work exactly the same way. The cat data supports more detailed matching, while the dog data works better with simpler lifestyle and temperament-based scoring.
+One thing I learned while building this project is that the dog and cat APIs do not return the same kind of breed data. Because of that, the dog quiz and cat quiz do not work exactly the same way. The cat data supports more detailed matching, while the dog data works better with simpler lifestyle and temperament based scoring.
 
----
-
-## License
-
-This project does not currently include a license.
