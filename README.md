@@ -5,10 +5,13 @@ PawMatch is a pet breed matching app I built to help people find **dog and cat b
 The idea behind the project is simple: instead of scrolling through random breeds, users can take a quiz and get matches based on the kind of pet they’re actually looking for. The app uses breed data from **TheDogAPI** and **TheCatAPI** to generate results, show breed details, and make the experience feel more useful and personalized.
 
 ---
+## Live demo
+
+Deployed with *GitHub Pages*: [PawMatch Live](https://nplanche.github.io/PawMatch/)
+
+---
 
 ## Why I built this
-
-A lot of people want a pet, but they do not always know which breed would be the best fit for their home, energy level, or preferences.
 
 I wanted to make something that felt fun to use, but also helpful. PawMatch is an interactive way to explore breeds by answering a few questions and getting matched with cats or dogs that may suit them better.
 
@@ -114,13 +117,6 @@ VITE_CAT_API_KEY=your_cat_api_key
 ```bash
 npm run dev
 ```
-
-### 5. Build for production
-
-```bash
-npm run build
-```
-
 ---
 
 ## Pages in the app
@@ -143,6 +139,19 @@ There are still a lot of things I’d like to keep improving in PawMatch, includ
 - adding match percentages
 - adding better loading and error states
 - polishing the UI more
+
+---
+
+## What I learned
+
+Building and deploying PawMatch helped me learn more about:
+
+- how to use Vite to structure and run a modern frontend project
+- how to prepare a project for production builds
+- how to deploy a site using  GitHub Workflows, Actions, and Pages
+- how deployment paths and asset handling work when hosting a Vite
+- how to manage environment variables and project setup more carefully
+- how to format a readme
 
 ---
 
